@@ -2,64 +2,100 @@
  * @param {number[]} numbers an array of integers
  * @returns {number} the length of the array
  */
-function getLength(numbers) {
-  // TODO
+const getLength = (numbers) => {
+  return numbers.length;
 }
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number} the sum of the numbers
  */
-function getSum(numbers) {
-  // TODO
+const getSum = (numbers) => {
+  const initialVal = 0;
+  return numbers.reduce(
+    (accumulator, currentVal) => accumulator + currentVal,
+    initialVal
+  );
 }
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number} the mean of the numbers
  */
-function getMean(numbers) {
-  // TODO
+const getMean = (numbers) => {
+  return getSum(numbers) / getLength(numbers);
 }
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number} the smallest of the numbers
  */
-function getMin(numbers) {
-  // TODO
+const getMin = (numbers) => {
+  if(numbers.length > 0) {
+    let the_min = numbers[0];
+    for(let i = 1; i < numbers.length; i++) {
+      if(numbers[i] < the_min) {
+        the_min = numbers[i];
+      }
+    }
+    return the_min;
+  } else {
+    return null;
+  }
 }
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number} the largest of the numbers
  */
-function getMax(numbers) {
-  // TODO
+const getMax = (numbers) => {
+  if(numbers.length > 0) {
+    let the_max = numbers[0];
+    for(let i = 1; i < numbers.length; i++) {
+      if(numbers[i] > the_max) {
+        the_max = numbers[i];
+      }
+    }
+    return the_max;
+  } else {
+    return null;
+  }
 }
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number} the range of the numbers (max - min)
  */
-function getRange(numbers) {
-  // TODO
+const getRange = (numbers) => {
+  return getMax(numbers) - getMin(numbers);
 }
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number[]} the even numbers in the array
  */
-function getEvens(numbers) {
-  // TODO
+const getEvens = (numbers) => {
+  const evenArray = [];
+  for(let i = 0; i < numbers.length; i++) {
+    if(Math.abs(numbers[i]) % 2 === 0) {
+      evenArray.push(numbers[i]);
+    }
+  }
+  return evenArray;
 }
 
 /**
  * @param {number[]} numbers an array of integers
  * @returns {number[]} the odd numbers in the array
  */
-function getOdds(numbers) {
-  // TODO
+const getOdds = (numbers) => {
+  const oddArray = [];
+  for(let i = 0; i < numbers.length; i++) {
+    if(Math.abs(numbers[i]) % 2 === 1) {
+      oddArray.push(numbers[i]);
+    }
+  }
+  return oddArray;
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
